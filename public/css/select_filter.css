@@ -1,0 +1,16 @@
+#idDynamicDivSelectFilter {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaciado entre el selector y el input */
+    justify-content: start; /* Alinear al inicio */
+}
+
+/* Estilo general */
+#idDynamicDivSelectFilter .form-control {
+    max-width: 200px; /* Limitar el ancho del input solo dentro de #idDynamicDivSelectFilter */
+}
+
+/* Ancho personalizado cuando se selecciona 'precio' */
+#idDynamicSelectFilter-precio {
+    width: 80px; /* Ancho ajustado */
+}

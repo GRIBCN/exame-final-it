@@ -1,0 +1,33 @@
+/* Estilo para la fila seleccionada */
+.table-row.selected .td-smartgrid {
+    background-color: #0052a9 !important;  /* Azul brillante */
+    color: white !important;    /* Asegura que el texto sea blanco */
+}
+
+/* Estilo para cuando el cursor pasa sobre las filas con la clase 'table-row' */
+.table-row.hovered {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+/* Estilo para el efecto hover en las filas */
+.table-row:hover {
+    background-color: #495057; /* Gris claro para el hover */
+}
+
+/* Asegurar que el contenedor tenga un espacio limitado para que el scroll horizontal funcione */
+#idActionButtonsTopLeft {
+    align-items: center;
+    flex-wrap: nowrap;  /* Evitar que los inputs se vayan a una nueva línea */
+    overflow-x: auto;   /* Agregar scroll horizontal si no cabe */
+    overflow-y: auto;   /* Agregar scroll horizontal si no cabe */
+}
+
+#idActionButtonsTopLeft input {
+    margin-right: 10px;  /* Separar los inputs */
+}
+
+#idActionButtonsTopRight {
+    align-items: center;
+    justify-content: flex-end;
+}

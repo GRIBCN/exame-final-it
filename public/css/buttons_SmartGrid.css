@@ -1,0 +1,55 @@
+/* Inicialmente ocultamos los botones de acción */
+.table-row .action-buttons {
+    visibility: hidden;
+    display: flex; /* Usamos flexbox para que los botones se alineen en fila */
+    gap: 5px; /* Añadimos un pequeño espacio entre los botones */
+    margin-right: auto; /* Alinea los botones a la izquierda */
+
+    /* display: none; */
+}
+
+/* Cuando el ratón pasa sobre la fila o la fila está seleccionada, mostramos los botones de acción */
+.table-row.hovered .action-buttons,
+.table-row.selected .action-buttons {
+    visibility: visible;
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}
+
+/* Estilos para los botones en la parte superior de SmartGrid */
+.btn-action {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 5px;
+    display: inline-block;
+    color: white;
+    transition: background-color 0.3s ease, border-radius 0.3s ease;
+    width: 40px; /* Definimos el ancho y la altura iguales */
+    height: 40px; /* Para que el botón siempre sea un cuadrado */
+    align-items: center;
+    justify-content: center; /* Centra el icono dentro del botón */
+}
+
+/* Iconos visibles siempre, pero sin fondo ni borde */
+.btn-action .material-icons {
+    font-size: 24px;
+}
+
+/* Botón de tres puntos estilizado */
+.material-icons {
+    color: white;
+}
+
+/* Cuando el ratón no está sobre el botón */
+.btn-action:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo semitransparente al pasar el ratón */
+    border-radius: 50%; /* Aparece un círculo */
+}
+
+/* Para asegurarnos de que el botón de cerrar esté alineado a la derecha */
+#idCloseRowTop {
+    margin-left: auto; /* Hace que el botón de cerrar esté en el extremo derecho */
+}
+

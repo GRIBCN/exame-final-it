@@ -1,0 +1,50 @@
+/* Fondo de la página */
+html, body {
+    background-color: #121212; /* Fondo oscuro */
+    color: #E0E0E0; /* Texto claro para contraste */
+    font-family: 'Roboto', sans-serif; /* Fuente moderna, como la captura */
+    margin: 0;
+    padding: 0;
+}
+
+/* Fondos y colores generales */
+.container {
+    background-color: #000000; /* Fondo más claro para contenedores */
+    color: #FFFFFF; /* Texto claro */
+    padding: 10px; /* Margen interior para los elementos */
+    margin: 10 auto; /* Centrar el contenido */
+
+    border-radius: 20px; /* Rounded corners */
+}
+
+.container.main {
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 10px;
+    margin: 0 auto; /* Centrar el contenedor */
+    max-width: 100%; /* Limitar el ancho */
+    overflow: hidden; /* Evitar desbordamiento */
+    border-radius: 20px;
+}
+
+/* Para el contenedor del menú principal */
+.container-menu {
+    max-width: 100%; /* Asegurar que no exceda el ancho del contenedor principal */
+    margin: 0 auto;  /* Centrar el contenido */
+    padding: 10px;
+    box-sizing: border-box; /* Asegurar que el padding no expanda el ancho */
+}
+
+/* Colores para los títulos y enlaces */
+h1, h2, h3, h4, h5, h6 {
+    color: #E0E0E0; /* Texto claro */
+}
+
+a {
+    color: #4CAF50; /* Color verde para enlaces */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #81C784; /* Verde claro al pasar el cursor */
+}

@@ -1,0 +1,25 @@
+/* Cards */
+.card {
+    display: inline-flex;
+    background-color: #1E1E1E; /* Fondo oscuro para las tarjetas */
+    border: 1px solid #333333; /* Borde sutil */
+    border-radius: 20px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #333333; /* Fondo oscuro para encabezado */
+    color: #FFFFFF; /* Texto claro */
+    padding: 10px;
+    font-size: 1.25rem;
+    border: 1px solid #444444;
+    border-radius: 20px;
+}
+
+.card-body {
+    padding: 15px;
+    color: #E0E0E0;
+    border: 1px solid #555555;
+}

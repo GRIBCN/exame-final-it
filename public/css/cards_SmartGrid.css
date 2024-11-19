@@ -1,0 +1,25 @@
+/* Estilo para la tarjeta (card) */
+.card-smartgrid  {
+    background-color: #0f0f0f; /* Fondo oscuro */
+    color: white; /* Texto blanco */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    max-width: 100%; /* La tarjeta ocupará el 100% del ancho de su contenedor padre */
+    overflow-x: auto; /* Scroll si es necesario */
+}
+
+/* Estilo para los botones de acciones (editar, eliminar, cerrar) */
+.card-body-smartgrid .btn-smartgrid {
+    margin-right: 5px;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+

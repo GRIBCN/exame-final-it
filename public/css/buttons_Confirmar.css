@@ -1,0 +1,43 @@
+/* Botón primario, similar a "Accept" */
+.btn-primary-confirm {
+    background-color: #ffffff;  /* Fondo blanco */
+    color: #000000;             /* Texto negro */
+    border: none;               /* Sin borde */
+    padding: 10px 20px;         /* Espaciado interno */
+    font-size: 16px;            /* Tamaño de la fuente */
+    font-weight: bold;          /* Texto en negrita */
+    border-radius: 5px;         /* Bordes redondeados */
+    cursor: pointer;            /* Apunta con el cursor */
+    transition: background-color 0.3s ease; /* Efecto de transición */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.btn-primary-confirm:hover {
+    background-color: #f0f0f0;  /* Fondo más oscuro al pasar el ratón */
+}
+
+/* Botón secundario, similar a "Cancel" */
+.btn-secondary-cancel {
+    background-color: transparent; /* Fondo transparente */
+    color: #ffffff;                /* Texto blanco */
+    border: 1px solid #ffffff;     /* Borde blanco */
+    padding: 10px 20px;            /* Espaciado interno */
+    font-size: 16px;               /* Tamaño de la fuente */
+    font-weight: bold;             /* Texto en negrita */
+    border-radius: 5px;            /* Bordes redondeados */
+    cursor: pointer;               /* Apunta con el cursor */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Efecto de transición */
+}
+
+.btn-secondary-cancel:hover {
+    background-color: rgba(255, 255, 255, 0.1);  /* Fondo semitransparente al pasar el ratón */
+    color: #f0f0f0;                             /* Texto ligeramente más claro al pasar el ratón */
+}
+
+/* Contenedor para centrar los botones */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}

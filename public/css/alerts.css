@@ -1,0 +1,52 @@
+
+
+/* Ajuste para centrar horizontal y verticalmente el contenedor del mensaje */
+.div-container-header-mensaje {
+    display: flex;
+    justify-content: center; /* Centramos horizontalmente */
+    align-items: center;     /* Centramos verticalmente */
+}
+
+/* Asegurarse de que el contenedor padre use Flexbox para alinear el contenido */
+.alert-dismissible {
+    display: flex; /* Utilizar Flexbox */
+    justify-content: space-between; /* Separar el texto del botón */
+    align-items: center; /* Alinear verticalmente el contenido, incluido el botón */
+    padding: 20px;
+    box-sizing: border-box; /* Asegura que el padding no incremente el tamaño total */
+    margin: 0 auto;         /* Asegura que el alert esté centrado en el contenedor */
+    max-width: 100%;         /* Asegura que no sobrepase el ancho */
+}
+
+/* Estilo para que el texto largo se ajuste a múltiples líneas */
+.message-res {
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+/* Estilo personalizado para el contenedor de la alerta */
+.alert-mensaje-status {
+    padding: 20px; /* Relleno interno de 20px alrededor del contenido */
+    margin: 10px;  /* Márgenes alrededor de la alerta */
+    border-radius: 8px; /* Opcional: Redondear las esquinas del borde */
+    position: relative; /* Para que el botón de cierre se posicione relativo a este contenedor */
+}
+
+/* Ajustar el color del botón para los mensajes de éxito (alert-success) */
+.alert-success .btn-close:hover {
+    background-color: #28a745; /* Color un poco más oscuro que el fondo verde */
+    opacity: 0.8; /* Ajustar opacidad para hacer el color más sutil */
+}
+
+/* Ajustar el color del botón para los mensajes de error (alert-danger) */
+.alert-danger .btn-close:hover {
+    background-color: #dc3545; /* Color un poco más oscuro que el fondo rojo */
+    opacity: 0.8; /* Ajustar opacidad para hacer el color más sutil */
+}
+
+/* Opcional: Cambiar el color del botón al pasar el mouse */
+.alert-success .btn-close:hover,
+.alert-danger .btn-close:hover {
+    opacity: 1; /* Aumentar la opacidad al hacer hover */
+}
+

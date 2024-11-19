@@ -1,0 +1,65 @@
+/* Estilo para las tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #FFFFFF; /* Texto claro */
+    margin-top: 20px; /* Espacio superior para la tabla */
+    overflow: visible; /* Permite que todo el contenido sea visible */
+    table-layout: auto; /* Ajusta el ancho de las columnas automáticamente según el contenido */
+    overflow-x: auto;   /* Agregar scroll horizontal si no cabe */
+    overflow-y: auto;   /* Agregar scroll horizontal si no cabe */
+}
+
+.table-smartgrid {
+    background-color: #343a40; /* Fondo gris oscuro */
+    color: white; /* Texto blanco */
+    width: 100%; /* Asegura que la tabla ocupe todo el ancho */
+    border-collapse: collapse; /* Evita los espacios entre las celdas */
+    table-layout: auto; /* Permite que el ancho de las columnas se ajuste automáticamente */
+    overflow-x: auto;
+    display: block; /* Hacer que el contenedor de la tabla tenga scroll */
+}
+
+.table-smartgrid th, .table-smartgrid td {
+    padding: 12px 15px; /* Añade espaciado dentro de las celdas */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+
+.th-smartgrid, .td-smartgrid {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #333333; /* Borde inferior para las filas */
+    background-color: #0f0f0f; /* Fondo oscuro por defecto */
+    line-height: 1.5; /* Asegura que haya suficiente espacio entre las líneas */
+}
+
+.th-smartgrid {
+    background-color: #333333; /* Asegura que el fondo sea suficientemente oscuro */
+    color: #FFFFFF; /* Asegura que el texto sea suficientemente claro */
+    font-weight: bold;
+    text-transform: uppercase; /* Mayúsculas para los títulos */
+    padding: 12px 15px;
+    text-align: center; /* Centrar el texto en los encabezados */
+    border: 1px solid #444444; /* Borde para separar las columnas */
+}
+
+.td-smartgrid {
+    background-color: #0f0f0f; /* Fondo oscuro para las celdas por defecto */
+    color: #E0E0E0; /* Color del texto claro */
+}
+.tr-smartgrid {
+    padding: 15px;
+    color: #E0E0E0;
+    border: 1px solid #555555;
+}
+
+.tr-smartgrid:hover {
+    background-color: #495057;
+}
+
+tr:hover .td-smartgrid:not(.selected) {
+    /* Fondo diferente al pasar el cursor */
+    background-color: #1c1c1c; /* Fondo diferente al pasar el cursor */
+    overflow: visible;
+}

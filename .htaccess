@@ -1,0 +1,38 @@
+# Establece una variable de entorno llamada APP_ENV con el valor "desarrollo".
+# Esto permite que tu aplicación sepa en qué entorno está funcionando (desarrollo o producción).
+SetEnv APP_ENV desarrollo
+
+# Bloquea el acceso a cualquier archivo que comience con ".env".
+# Esto es crucial porque los archivos .env contienen datos sensibles como credenciales de la base de datos.
+<FilesMatch "^\.env.*$">
+    Require all denied
+</FilesMatch>
+
+# Desactiva el listado de directorios.
+# Evita que se muestre el contenido de una carpeta si no existe un archivo index.php o index.html.
+Options -Indexes
+
+# Habilita el módulo de reescritura de URLs.
+RewriteEngine On
+
+# Redirige cualquier acceso directo a un directorio al archivo principal index.php.
+# Esto asegura que las peticiones sean gestionadas por la lógica de tu aplicación.
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.*)$ /index.php [L]
+
+# Proteger archivos sensibles adicionales
+<FilesMatch "^(config\.php|\.htaccess)$">
+    Require all denied
+</FilesMatch>
+
+
+# Configurar caché para producción
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+</IfModule>
+
+# Definir página de error personalizada
+ErrorDocument 403 /error/403.html
+ErrorDocument 404 /error/404.html
+

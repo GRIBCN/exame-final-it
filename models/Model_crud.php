@@ -114,11 +114,32 @@
             // Obtiene el resultado de la consulta
             // Se usa en consultas SELECT para obtener los datos devueltos por la consulta.
             $result = $stmt->get_result();
+            /*
+            if( $_POST['r'] == 'enlaces-filter' ) {
+                echo json_encode([
+                    'success' => true,
+                    'msg01' => 'La etiqueta SELCT de la columna ',
+                    'msg02' => $result->num_rows,
+                    'msg03' => 'ha sido generada correctamente',
+                    'datos' => $result
+                ]);
+                exit();
+            }
+            */
+            // Verifica si hay resultados
+            if ($result->num_rows > 0) {
+                // Almacena los resultados en un array
+                // Se transforma en un array asociativo utilizando
+                // fetch_all(MYSQLI_ASSOC) - Convierte todos los resultados de la consulta en un array asociativo, donde cada fila es un array de claves y valores
+                $data = $result->fetch_all(MYSQLI_ASSOC);
+            } else {
+                $data = [];
+            }
             
             // Almacena los resultados en un array
             // Se transforma en un array asociativo utilizando
             // fetch_all(MYSQLI_ASSOC) - Convierte todos los resultados de la consulta en un array asociativo, donde cada fila es un array de claves y valores
-            $data = $result->fetch_all(MYSQLI_ASSOC);
+            // $data = $result->fetch_all(MYSQLI_ASSOC);
 
             $stmt->close();
             $this->db_close();

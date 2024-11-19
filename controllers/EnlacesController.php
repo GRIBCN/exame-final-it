@@ -13,7 +13,8 @@
         // Verifica si la filla EXISTE
         public function filterEnlaces($query, $valor) {
 
-            return $this->execute_prepared_select($query, 's', ['%' . $valor . '%']);
+            $data = $this->execute_prepared_select($query, 's', ['%' . $valor . '%']);
+            return $data;
         }
 
     }

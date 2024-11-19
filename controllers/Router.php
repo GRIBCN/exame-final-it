@@ -87,24 +87,35 @@ class Router {
 
         $enlaces = $enlaces_controller->filterEnlaces($consulta, $valor);
         $consulta_res = str_replace('?', '', $consulta) . ' %' . $valor . '%';
-        
-        if ($enlaces) {
-            // Ha consultado los valores únicos de la columna, devolvemos una respuesta JSON
+
+        if (empty($enlaces)) {
+            // La consulta se ejecutó correctamente pero devolvió 0 registros
             echo json_encode([
                 'success' => true,
-                'msg01' => 'La consulta ',
-                'msg02' => $consulta_res,
-                'msg03' => 'ha sido ejecutada correctamente',
-                'tablaHTML' => $this->generarTabla($enlaces)
+                'msg01' => 'La etiqueta SELECT de la columna ',
+                'msg02' => $field,
+                'msg03' => 'no tiene registros que coincidan con los filtros aplicados',
+                'datos' => [] // Devuelve un array vacío
             ]);
         } else {
-            // Si ocurrió un error al intentar consultar los valores únicos de uan columna
-            echo json_encode([
-                'success' => false,
-                'msg01' => 'Error al intentar ejecutar la consulta ',
-                'msg02' => $consulta_res,
-                'msg03' => '!'
-            ]);
+            if ($enlaces) {
+                // Ha consultado los valores únicos de la columna, devolvemos una respuesta JSON
+                echo json_encode([
+                    'success' => true,
+                    'msg01' => 'La consulta ',
+                    'msg02' => $consulta_res,
+                    'msg03' => 'ha sido ejecutada correctamente',
+                    'tablaHTML' => $this->generarTabla($enlaces)
+                ]);
+            } else {
+                // Si ocurrió un error al intentar consultar los valores únicos de uan columna
+                echo json_encode([
+                    'success' => false,
+                    'msg01' => 'Error al intentar ejecutar la consulta ',
+                    'msg02' => $consulta_res,
+                    'msg03' => '!'
+                ]);
+            }
         }
         exit();
     }
@@ -123,10 +134,21 @@ class Router {
             }
 
             // Generar el cuerpo de la tabla
-            foreach ($enlaces as $row) {
+            foreach ($enlaces as $key_row => $row) {
                 $template_enlaces .= '<tr class="tr-smartgrid">';
-                foreach ($row as $cell) {
-                    $template_enlaces .= '<td class="td-smartgrid">' . $cell . '</td>';
+                foreach ($row as $key_cell => $cell) {
+                    if($key_cell == 'enlace') {
+                        // Si es la columna "enlace", generamos un enlace o un botón
+                        $template_enlaces .= '
+                            <td class="td-smartgrid">
+                                <a href="' . $cell . '" target="_blank" class="btn btn-sm btn-secondary">
+                                    <i class="fa-solid fa-link"></i> Ver Pagina
+                                </a>
+                            </td>
+                        ';
+                    } else {
+                        $template_enlaces .= '<td class="td-smartgrid">' . $cell . '</td>';
+                    }
                 }
                 $template_enlaces .= '
                     </tr>';
